@@ -17,7 +17,6 @@ class StyleButton extends StatelessWidget {
       onPressed: onPressed,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        child: child,
         decoration: BoxDecoration(
           gradient: LinearGradient(
               colors: [AppColors.primaryColor, AppColors.primaryAccent],
@@ -25,6 +24,7 @@ class StyleButton extends StatelessWidget {
               end: Alignment.bottomCenter),
           borderRadius: const BorderRadius.all(Radius.circular(5)),
         ),
+        child: child,
       ),
     );
   }

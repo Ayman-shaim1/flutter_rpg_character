@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class AppColors {
   static Color primaryColor = const Color.fromRGBO(162, 29, 19, 1);
   static Color primaryAccent = const Color.fromRGBO(120, 14, 14, 1);
@@ -49,7 +50,6 @@ ThemeData primaryTheme = ThemeData(
   ),
 
   // card theme :
-
   cardTheme: CardTheme(
     color: AppColors.secondaryColor.withOpacity(0.5),
     surfaceTintColor: Colors.transparent,
@@ -57,4 +57,12 @@ ThemeData primaryTheme = ThemeData(
     shadowColor: Colors.transparent,
     margin: const EdgeInsets.only(bottom: 16),
   ),
+
+  // input decoration theme :
+  inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: AppColors.secondaryColor.withOpacity(0.5),
+      border: InputBorder.none,
+      labelStyle: TextStyle(color: AppColors.textColor),
+      prefixIconColor: AppColors.textColor),
 );

@@ -36,6 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   uuid: ^4.4.0
+  provider: ^6.1.2
+  firebase_core: ^2.30.1
+  cloud_firestore: ^4.17.2
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +67,25 @@ flutter:
     - assets/img/vocations/code_junkie.jpg
     - assets/img/vocations/terminal_raider.jpg
     - assets/img/vocations/ux_ninja.jpg
+    - assets/img/skills/backtrack.jpg
+    - assets/img/skills/bf_bolt.jpg
+    - assets/img/skills/c_paste.jpg
+    - assets/img/skills/d_pattern.jpg
+    - assets/img/skills/encapsulate.jpg
+    - assets/img/skills/f_clear.jpg
+    - assets/img/skills/gamify.jpg
+    - assets/img/skills/h_beam.jpg
+    - assets/img/skills/h_map.jpg
+    - assets/img/skills/i_loop.jpg
+    - assets/img/skills/l_touch.jpg
+    - assets/img/skills/r_wave.jpg
+    - assets/img/skills/s_blast.jpg
+    - assets/img/skills/s_shell.jpg
+    - assets/img/skills/t_cast.jpg
+    - assets/img/skills/wireframe.jpg
+
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

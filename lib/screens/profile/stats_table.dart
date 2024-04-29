@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_rpg/models/character.dart';
 import 'package:flutter_rpg/shared/styled_text.dart';
 import 'package:flutter_rpg/theme.dart';
@@ -12,6 +13,8 @@ class StatsTable extends StatefulWidget {
 }
 
 class _StatsTableState extends State<StatsTable> {
+  double turns = 0.0;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,10 +27,14 @@ class _StatsTableState extends State<StatsTable> {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                Icon(Icons.star,
-                    color: widget.character.points > 0
-                        ? Colors.yellow[500]
-                        : Colors.grey),
+                AnimatedRotation(
+                  duration: const Duration(milliseconds: 200),
+                  turns: turns,
+                  child: Icon(Icons.star,
+                      color: widget.character.points > 0
+                          ? Colors.yellow[500]
+                          : Colors.grey),
+                ),
                 const SizedBox(
                   width: 20,
                 ),
@@ -47,8 +54,8 @@ class _StatsTableState extends State<StatsTable> {
             children: widget.character.statsAsFormattedList.map((stat) {
               return TableRow(
                   decoration: BoxDecoration(
-                    color:  AppColors.secondaryColor.withOpacity(0.5),
-                    
+                    color: AppColors.secondaryColor.withOpacity(0.5),
+
                     // borderRadius: const BorderRadius.all(Radius.circular(5)),
                   ),
                   children: [
@@ -77,6 +84,9 @@ class _StatsTableState extends State<StatsTable> {
                             onPressed: () {
                               setState(() {
                                 widget.character.increaseStat(stat['title']!);
+                                setState(() {
+                                  turns += 0.5;
+                                });
                               });
                             })),
                     // icon to decrease stat :
@@ -90,6 +100,7 @@ class _StatsTableState extends State<StatsTable> {
                             onPressed: () {
                               setState(() {
                                 widget.character.decreaseStat(stat['title']!);
+                                turns -= 0.5;
                               });
                             })),
                   ]);
